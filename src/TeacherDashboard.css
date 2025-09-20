@@ -1,0 +1,336 @@
+/* Base Layout */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f4f6;
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard {
+  min-height: 100vh;
+}
+
+.dashboard-content {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Navbar */
+.navbar {
+  background-color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.navbar-left {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.navbar-right {
+  display: flex;
+  gap: 1rem;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 1rem;
+}
+
+.tab {
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: #6b7280;
+  padding-bottom: 2px;
+}
+
+.tab.active {
+  font-weight: bold;
+  color: #7c3aed;
+  border-bottom: 2px solid #7c3aed;
+}
+
+/* Buttons */
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.btn.primary {
+  background-color: #7c3aed;
+  color: white;
+}
+
+.btn.success {
+  background-color: #10b981;
+  color: white;
+}
+
+.btn.outline {
+  border: 1px solid #7c3aed;
+  color: #7c3aed;
+  background: transparent;
+}
+
+.btn.full-width {
+  width: 100%;
+}
+
+/* Panel */
+.panel {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.panel-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="file"],
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+/* Upload */
+.upload-form h3 {
+  margin-bottom: 1rem;
+}
+
+.drop-zone {
+  border: 2px dashed #cbd5e1;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+}
+
+.link {
+  text-decoration: underline;
+  color: #7c3aed;
+  cursor: pointer;
+}
+
+.uploaded-files ul {
+  list-style: none;
+  padding: 0;
+}
+
+.file-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.uploaded-status {
+  font-size: 0.75rem;
+  color: green;
+}
+
+/* Grid */
+.grid {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.left-col {
+  flex: 2;
+}
+
+.right-col {
+  flex: 1;
+}
+
+.checkbox-group {
+  border: 1px solid #e5e7eb;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.checkbox-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Content Table */
+.content-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.content-table th,
+.content-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.content-table th {
+  background-color: #f9fafb;
+  color: #4b5563;
+}
+
+/* Status Tags */
+.status-tag {
+  padding: 0.2rem 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 4px;
+}
+
+.status-tag.completed {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.status-tag.in-progress {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.status-tag.default {
+  background-color: #f3f4f6;
+  color: #4b5563;
+}
+
+/* Lectures */
+.lecture-drafts {
+  margin-top: 1rem;
+}
+
+.lecture-row {
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lecture-title {
+  font-weight: 600;
+}
+
+.lecture-meta {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.lecture-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Lecture Form */
+.lecture-form-grid {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.lecture-form-left {
+  flex: 1;
+}
+
+.lecture-form-right {
+  flex: 2;
+}
+
+.drop-box {
+  border: 2px dashed #cbd5e1;
+  padding: 2rem;
+  text-align: center;
+  color: #6b7280;
+  border-radius: 4px;
+}
+
+.recording-box {
+  border: 1px solid #e5e7eb;
+  padding: 1rem;
+  border-radius: 4px;
+  background: #f9fafb;
+  font-size: 0.85rem;
+}
+
+.preview-box {
+  height: 300px;
+  background: #e5e7eb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #9ca3af;
+  border-radius: 6px;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #d1d5db;
+  border-radius: 4px;
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 50%;
+  height: 100%;
+  background-color: #7c3aed;
+}
+
+/* Search Bar */
+.search-bar {
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
