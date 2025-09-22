@@ -1,5 +1,5 @@
 import React from "react";
-import TeacherDashboard from "./TeacherDashboard";
+import TeacherDashboard from "./pages/teacher/TeacherDashboard";
 
 export default function App() {
   return <TeacherDashboard />;
