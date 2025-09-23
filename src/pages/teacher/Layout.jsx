@@ -1,12 +1,13 @@
 import React from "react";
 import { Outlet, useLocation } from "react-router-dom";
-import NavBar from "../../components/layout/Navbar";
+import NavBar from "../../components/layout/Navbar.jsx";
 import "./TeacherDashboard.css";
 
 export default function Layout() {
     const location = useLocation();
-    // Extract the current path and set it as the active tab
-    const activeTab = location.pathname.substring(1) || "lectures";
+    // Extracts the active tab from the URL, e.g., "lectures" from "/dashboard/lectures"
+    const pathParts = location.pathname.split('/');
+    const activeTab = pathParts[2] || "lectures";
 
     return (
         <div className="dashboard">
@@ -18,3 +19,4 @@ export default function Layout() {
         </div>
     );
 }
+

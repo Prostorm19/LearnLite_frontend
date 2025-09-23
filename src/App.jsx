@@ -1,6 +1,7 @@
 import React from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 import Layout from "./pages/teacher/Layout";
+import CourseSelection from "./pages/teacher/CourseSelection";
 import Lectures from "./components/features/lectures/Lectures";
 import UploadContent from "./components/features/upload/UploadContent";
 import Analytics from "./components/features/analytics/Analytics";
@@ -13,11 +14,15 @@ import LectureForm from "./components/features/lectures/LectureForm";
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <CourseSelection />,
+  },
+  {
+    path: "/dashboard",
     element: <Layout />,
     children: [
       {
-        index: true, // This will be the default child route
-        element: <Lectures />,
+        index: true, // Redirects /dashboard to /dashboard/lectures
+        element: <Navigate to="lectures" replace />,
       },
       {
         path: "lectures",

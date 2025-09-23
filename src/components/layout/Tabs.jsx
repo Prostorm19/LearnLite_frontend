@@ -20,7 +20,7 @@ export default function Tabs({ activeTab }) {
             {tabs.map((t) => (
                 <Link
                     key={t}
-                    to={`/${t}`}
+                    to={`/dashboard/${t}`}
                     className={`tab ${activeTab === t ? "active" : ""}`}
                 >
                     {capitalize(t)}

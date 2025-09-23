@@ -39,7 +39,7 @@ export default function Lectures() {
                     placeholder="Search for Lecture"
                 />
                 <div className="panel-actions">
-                    <Link to="/lectures/new">
+                    <Link to="/dashboard/lectures/new">
                         <Button className="primary">Create new lecture</Button>
                     </Link>
                     <Button>View Drafts</Button>
