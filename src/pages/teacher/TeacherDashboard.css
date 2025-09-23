@@ -418,3 +418,51 @@ select {
   color: #6b7280;
   margin-top: 0.25rem;
 }
+
+/* Quiz Page Specific Styles */
+.quiz-list {
+  margin-top: 1.5rem;
+}
+
+.quiz-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.quiz-title {
+  font-weight: 600;
+}
+
+.quiz-meta {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+.quiz-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.quiz-status {
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+}
+
+.quiz-status.published {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.quiz-status.draft {
+  background-color: #fef3c7;
+  color: #92400e;
+}
