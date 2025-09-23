@@ -237,7 +237,8 @@ select {
   border-radius: 4px;
 }
 
-.status-tag.completed {
+.status-tag.completed,
+.status-tag.graded {
   background-color: #d1fae5;
   color: #065f46;
 }
@@ -245,6 +246,11 @@ select {
 .status-tag.in-progress {
   background-color: #fef3c7;
   color: #92400e;
+}
+
+.status-tag.upcoming {
+  background-color: #e0e7ff;
+  color: #3730a3;
 }
 
 .status-tag.default {
@@ -342,4 +348,73 @@ select {
   border: 1px solid #d1d5db;
   border-radius: 4px;
   font-size: 0.9rem;
+}
+
+/* Assignments Page Specific Styles */
+.create-assignment-options h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.25rem;
+  color: #374151;
+}
+
+.options-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.option-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  flex: 1;
+  max-width: 300px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.option-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.option-card h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.option-card p {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+  min-height: 40px;
+}
+
+.assignments-list {
+  margin-top: 1.5rem;
+}
+
+.assignment-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.assignment-title {
+  font-weight: 600;
+}
+
+.assignment-meta {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
 }
