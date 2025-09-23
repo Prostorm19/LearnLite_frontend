@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Panel from "../../ui/Panel.jsx";
 import SearchBar from "../../ui/SearchBar.jsx";
 import Button from "../../ui/Button.jsx";
+import { Link } from "react-router-dom";
 
 export default function Lectures() {
     const [searchQuery, setSearchQuery] = useState("");
@@ -38,7 +39,9 @@ export default function Lectures() {
                     placeholder="Search for Lecture"
                 />
                 <div className="panel-actions">
-                    <Button className="primary">Create new lecture</Button>
+                    <Link to="/lectures/new">
+                        <Button className="primary">Create new lecture</Button>
+                    </Link>
                     <Button>View Drafts</Button>
                 </div>
             </div>
