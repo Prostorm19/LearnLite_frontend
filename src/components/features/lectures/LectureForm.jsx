@@ -23,6 +23,8 @@ export default function LectureForm() {
                         <label>Upload Slides</label>
                         <div className="drop-box">Drag & drop PPT, PDF, JPG, PNG</div>
                     </div>
+                </div>
+                <div className="lecture-form-right">
                     <div className="form-group">
                         <label>Recording Controls</label>
                         <div className="recording-box">
@@ -33,8 +35,6 @@ export default function LectureForm() {
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className="lecture-form-right">
                     <div className="preview-box">
                         Upload slides to begin (preview area)
                     </div>
