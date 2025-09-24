@@ -503,3 +503,128 @@ select {
 .selection-form button {
   margin-top: 1rem;
 }
+
+/* --- Settings Page Styles --- */
+
+.settings-layout {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.settings-nav {
+  flex: 0 0 200px;
+  /* Sets a fixed width for the navigation sidebar */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.settings-nav-item {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
+  background: none;
+  text-align: left;
+  font-size: 0.95rem;
+  color: #4b5563;
+  cursor: pointer;
+  border-radius: 6px;
+  border-left: 3px solid transparent;
+}
+
+.settings-nav-item:hover {
+  background-color: #f3f4f6;
+}
+
+.settings-nav-item.active {
+  font-weight: 600;
+  color: #7c3aed;
+  border-left: 3px solid #7c3aed;
+}
+
+.settings-content {
+  flex: 1;
+  /* Allows the content area to take up the remaining space */
+}
+
+.settings-content .panel {
+  margin-bottom: 0;
+  /* Remove default panel margin for this layout */
+}
+
+/* Profile specific styles */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.profile-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #e0e7ff;
+  color: #3730a3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.profile-info {
+  flex-grow: 1;
+}
+
+.profile-info h4 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.profile-info p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* Creates a 2-column grid */
+  gap: 1.5rem;
+}
+
+.email-settings {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.email-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.email-row p,
+.email-row small {
+  margin: 0;
+}
+
+.email-row small {
+  color: #6b7280;
+}
+
+.add-email-btn {
+  background: none;
+  border: none;
+  color: #7c3aed;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  margin-top: 0.5rem;
+}

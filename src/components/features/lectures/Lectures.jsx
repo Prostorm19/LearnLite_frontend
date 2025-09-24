@@ -38,7 +38,7 @@ export default function Lectures() {
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Search for Lecture"
                 />
-                <div className="panel-actions">
+                <div className="panel-actions" style={{ marginTop: '1rem' }}>
                     <Link to="/dashboard/lectures/new">
                         <Button className="primary">Create new lecture</Button>
                     </Link>
