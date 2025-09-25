@@ -10,6 +10,7 @@ import Quiz from "./components/features/quiz/Quiz";
 import Schedule from "./components/features/schedule/Schedule";
 import Settings from "./components/features/settings/Settings";
 import LectureForm from "./components/features/lectures/LectureForm";
+import MathWhiteboard from "./components/features/whiteboard/MathWhiteboard"; // Import the whiteboard
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
       {
         path: "schedule",
         element: <Schedule />,
+      },
+      {
+        path: "whiteboard", // Add the whiteboard route
+        element: <MathWhiteboard />,
       },
       {
         path: "settings",

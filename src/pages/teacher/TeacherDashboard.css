@@ -695,3 +695,25 @@ select {
   font-size: 0.9rem;
   cursor: pointer;
 }
+
+/* ...existing code... */
+
+/* Whiteboard specific styles */
+.whiteboard-container {
+  height: calc(100vh - 120px);
+  /* Adjust based on navbar height */
+  padding: 0;
+  /* Remove default dashboard content padding for whiteboard */
+}
+
+.whiteboard-container .panel {
+  height: 100%;
+  margin: 0;
+}
+
+/* Override dashboard content padding specifically for whiteboard */
+.dashboard-content:has(.whiteboard-container) {
+  padding: 0;
+}
+
+/* ...existing code... */

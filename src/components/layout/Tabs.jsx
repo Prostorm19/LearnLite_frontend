@@ -13,6 +13,7 @@ export default function Tabs({ activeTab }) {
         "assignments",
         "quiz",
         "schedule",
+        "whiteboard", // Add whiteboard to the tabs
         "settings",
     ];
     return (
