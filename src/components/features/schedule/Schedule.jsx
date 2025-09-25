@@ -28,33 +28,48 @@ export default function Schedule() {
 
     const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 
+    // Get all unique time slots from the schedule data and sort them
+    const timeSlots = Array.from(
+        new Set(Object.values(scheduleData).flat().map(item => item.time))
+    ).sort();
+
     return (
         <Panel>
             <div className="panel-header">
                 <h2>Weekly Schedule</h2>
                 <Button className="primary">Schedule a new class</Button>
             </div>
-            <div className="schedule-grid">
-                {days.map((day) => (
-                    <div key={day} className="schedule-day">
-                        <h3>{day}</h3>
-                        <div className="day-events">
-                            {scheduleData[day] ? (
-                                scheduleData[day].map((event, index) => (
-                                    <div key={index} className="schedule-event">
-                                        <div className="event-time">{event.time}</div>
-                                        <div className="event-details">
-                                            <div className="event-subject">{event.subject}</div>
-                                            <div className="event-course">{event.course}</div>
-                                        </div>
-                                    </div>
-                                ))
-                            ) : (
-                                <p className="no-events">No classes scheduled</p>
-                            )}
-                        </div>
-                    </div>
-                ))}
+            <div className="timetable-container">
+                <table className="timetable">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            {days.map((day) => (
+                                <th key={day}>{day}</th>
+                            ))}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {timeSlots.map((time) => (
+                            <tr key={time}>
+                                <td>{time}</td>
+                                {days.map((day) => {
+                                    const event = scheduleData[day]?.find(e => e.time === time);
+                                    return (
+                                        <td key={day}>
+                                            {event ? (
+                                                <div className="timetable-event">
+                                                    <div className="event-subject">{event.subject}</div>
+                                                    <div className="event-course">{event.course}</div>
+                                                </div>
+                                            ) : null}
+                                        </td>
+                                    );
+                                })}
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
             </div>
         </Panel>
     );

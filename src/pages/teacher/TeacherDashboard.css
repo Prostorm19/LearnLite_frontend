@@ -628,3 +628,54 @@ select {
   padding: 0.5rem 0;
   margin-top: 0.5rem;
 }
+
+/* --- Timetable Styles --- */
+
+.timetable-container {
+  margin-top: 1.5rem;
+  overflow-x: auto;
+  /* Ensures the table is responsive on smaller screens */
+}
+
+.timetable {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #e5e7eb;
+}
+
+.timetable th,
+.timetable td {
+  border: 1px solid #e5e7eb;
+  padding: 0.75rem;
+  text-align: center;
+  min-width: 120px;
+  /* Ensures columns have a minimum width */
+}
+
+.timetable th {
+  background-color: #f9fafb;
+  font-weight: 600;
+}
+
+.timetable td {
+  height: 80px;
+  vertical-align: top;
+}
+
+.timetable-event {
+  background-color: #e0e7ff;
+  border-radius: 4px;
+  padding: 0.5rem;
+  font-size: 0.85rem;
+  text-align: left;
+}
+
+.timetable-event .event-subject {
+  font-weight: 600;
+  color: #3730a3;
+}
+
+.timetable-event .event-course {
+  font-size: 0.75rem;
+  color: #4f46e5;
+}

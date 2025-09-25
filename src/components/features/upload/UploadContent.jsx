@@ -28,10 +28,7 @@ export default function UploadContent() {
 
             <div>
                 <UploadForm />
-                <div className="content-list" style={{ marginTop: '2rem' }}>
-                    <h3>My Content List</h3>
-                    <ContentTable />
-                </div>
+
             </div>
         </Panel>
     );
