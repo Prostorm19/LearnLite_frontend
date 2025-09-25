@@ -3,26 +3,26 @@ import Panel from "../../ui/Panel.jsx";
 import Button from "../../ui/Button.jsx";
 
 export default function Schedule() {
-    // Static data for the weekly schedule
+    // Static data for the weekly schedule - only DSA classes
     const scheduleData = {
         Monday: [
-            { time: "10:00 AM", course: "MCA", subject: "Data Structures" },
-            { time: "02:00 PM", course: "MTech", subject: "Advanced Algorithms" },
+            { time: "10:00 AM", course: "MCA", subject: "DSA - Arrays & Strings" },
+            { time: "02:00 PM", course: "MCA", subject: "DSA - Linked Lists" },
         ],
         Tuesday: [
-            { time: "11:00 AM", course: "MBA (Tech)", subject: "Business Strategy" },
+            { time: "11:00 AM", course: "MCA", subject: "DSA - Stacks & Queues" },
         ],
         Wednesday: [
-            { time: "10:00 AM", course: "MCA", subject: "Data Structures" },
-            { time: "03:00 PM", course: "MCA B1", subject: "Lab Session" },
+            { time: "10:00 AM", course: "MCA", subject: "DSA - Trees" },
+            { time: "03:00 PM", course: "MCA", subject: "DSA - Lab Session" },
         ],
         Thursday: [
-            { time: "09:00 AM", course: "MTech", subject: "Machine Learning" },
-            { time: "11:00 AM", course: "MBA (Tech)", subject: "Marketing Analytics" },
+            { time: "09:00 AM", course: "MCA", subject: "DSA - Graphs" },
+            { time: "11:00 AM", course: "MCA", subject: "DSA - Dynamic Programming" },
         ],
         Friday: [
-            { time: "10:00 AM", course: "MCA", subject: "Database Systems" },
-            { time: "02:00 PM", course: "MTech", subject: "Advanced Algorithms" },
+            { time: "10:00 AM", course: "MCA", subject: "DSA - Sorting Algorithms" },
+            { time: "02:00 PM", course: "MCA", subject: "DSA - Searching Algorithms" },
         ],
     };
 
