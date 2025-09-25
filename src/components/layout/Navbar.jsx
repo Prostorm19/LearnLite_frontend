@@ -12,6 +12,11 @@ export default function NavBar({ activeTab }) {
         navigate('/');
     };
 
+    const handleProfileClick = () => {
+        // This function navigates to the settings page.
+        navigate('/dashboard/settings');
+    };
+
     return (
         <div className="navbar">
             <div className="navbar-left">
@@ -20,8 +25,11 @@ export default function NavBar({ activeTab }) {
             </div>
             <div className="navbar-right">
                 <Button className="outline" onClick={handleLogout}>Log Out</Button>
+                {/* The onClick handler is added here */}
+                <div className="profile-icon" onClick={handleProfileClick}>
+                    <span>AR</span>
+                </div>
             </div>
         </div>
     );
 }
-

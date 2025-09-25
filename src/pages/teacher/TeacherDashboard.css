@@ -679,3 +679,19 @@ select {
   font-size: 0.75rem;
   color: #4f46e5;
 }
+
+/* --- Profile Icon Styles --- */
+
+.profile-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #e0e7ff;
+  color: #3730a3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
