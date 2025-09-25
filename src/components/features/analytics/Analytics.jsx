@@ -21,81 +21,105 @@ ChartJS.register(
     Legend
 );
 
-// More detailed static data organized by course and subject
-const subjectAnalyticsData = {
-    'MCA': [
-        { subject: 'Data Structures', views: 150 },
-        { subject: 'Advanced Java', views: 120 },
-        { subject: 'Computer Networks', views: 95 },
-        { subject: 'AI Concepts', views: 180 },
-    ],
-    'MTech': [
-        { subject: 'Machine Learning', views: 250 },
-        { subject: 'Big Data', views: 210 },
-        { subject: 'Cloud Computing', views: 190 },
-    ],
-    'BTech': [
-        { subject: 'Discrete Mathematics', views: 110 },
-        { subject: 'Operating Systems', views: 130 },
-        { subject: 'Compiler Design', views: 80 },
-    ],
-    'MBA (Tech)': [
-        { subject: 'Business Strategy', views: 170 },
-        { subject: 'Marketing Analytics', views: 145 },
-    ],
+// --- Static Data for Different Charts ---
+
+// 1. Data for Lecture Views
+const lectureViewsData = {
+    'MCA': [{ subject: 'Arrays', value: 150 }, { subject: 'Linked Lists', value: 120 }, { subject: 'Trees', value: 180 }],
+    'MTech': [{ subject: 'Machine Learning', value: 250 }, { subject: 'Big Data', value: 210 }],
 };
 
+// 2. Data for Assignment Submissions
+const assignmentSubmissionsData = {
+    'MCA': [{ subject: 'Arrays', value: 35 }, { subject: 'Linked Lists', value: 40 }, { subject: 'Trees', value: 30 }],
+    'MTech': [{ subject: 'Machine Learning', value: 22 }, { subject: 'Big Data', value: 18 }],
+};
+
+// 3. Data for Quiz Scores (as average percentage)
+const quizScoresData = {
+    'MCA': [{ subject: 'Arrays', value: 78 }, { subject: 'Linked Lists', value: 85 }, { subject: 'Trees', value: 72 }],
+    'MTech': [{ subject: 'Machine Learning', value: 90 }, { subject: 'Big Data', value: 81 }],
+};
+
+// --- Main Analytics Component ---
 
 export default function Analytics() {
-    const [selectedCourse, setSelectedCourse] = useState('MCA');
+    const [chartType, setChartType] = useState('lectureViews'); // Default chart
+    const [selectedCourse, setSelectedCourse] = useState('MCA'); // Default course
 
-    const chartData = {
-        labels: subjectAnalyticsData[selectedCourse].map(d => d.subject),
-        datasets: [
-            {
-                label: "Lecture Views",
-                data: subjectAnalyticsData[selectedCourse].map(d => d.views),
-                backgroundColor: "rgba(124, 58, 237, 0.6)",
-                borderColor: "rgba(124, 58, 237, 1)",
-                borderWidth: 1,
+    // A helper function to get the correct data and configuration based on the selected chart type
+    const getChartData = () => {
+        let data, label, title, backgroundColor, borderColor;
+
+        switch (chartType) {
+            case 'assignments':
+                data = assignmentSubmissionsData[selectedCourse];
+                label = "Assignments Submitted";
+                title = `Assignments Submitted per Subject for ${selectedCourse}`;
+                backgroundColor = "rgba(22, 163, 74, 0.6)";
+                borderColor = "rgba(22, 163, 74, 1)";
+                break;
+            case 'quizScores':
+                data = quizScoresData[selectedCourse];
+                label = "Average Quiz Score (%)";
+                title = `Average Quiz Scores per Subject for ${selectedCourse}`;
+                backgroundColor = "rgba(219, 39, 119, 0.6)";
+                borderColor = "rgba(219, 39, 119, 1)";
+                break;
+            case 'lectureViews':
+            default:
+                data = lectureViewsData[selectedCourse];
+                label = "Lecture Views";
+                title = `Lecture Views per Subject for ${selectedCourse}`;
+                backgroundColor = "rgba(124, 58, 237, 0.6)";
+                borderColor = "rgba(124, 58, 237, 1)";
+                break;
+        }
+
+        return {
+            chartData: {
+                labels: data.map(d => d.subject),
+                datasets: [{
+                    label: label,
+                    data: data.map(d => d.value),
+                    backgroundColor: backgroundColor,
+                    borderColor: borderColor,
+                    borderWidth: 1,
+                }],
             },
-        ],
+            chartOptions: {
+                responsive: true,
+                plugins: {
+                    legend: { position: "top" },
+                    title: { display: true, text: title },
+                },
+                scales: {
+                    y: { beginAtZero: true },
+                },
+            },
+        };
     };
 
-    const chartOptions = {
-        responsive: true,
-        plugins: {
-            legend: {
-                position: "top",
-            },
-            title: {
-                display: true,
-                text: `Lecture Views per Subject for ${selectedCourse}`,
-            },
-        },
-        scales: {
-            y: {
-                beginAtZero: true,
-            },
-        },
-    };
+    const { chartData, chartOptions } = getChartData();
+    const availableCourses = Object.keys(lectureViewsData); // Assuming all data types have the same courses
 
     return (
         <Panel>
-            <div className="panel-header" style={{ marginBottom: '1.5rem' }}>
+            <div className="panel-header" style={{ marginBottom: '1.5rem', gap: '1rem' }}>
                 <h2>Analytics</h2>
                 <div className="form-group">
-                    <label htmlFor="course-select">Select Course</label>
+                    <label htmlFor="chart-type-select">Select Metric</label>
                     <select
-                        id="course-select"
-                        value={selectedCourse}
-                        onChange={(e) => setSelectedCourse(e.target.value)}
+                        id="chart-type-select"
+                        value={chartType}
+                        onChange={(e) => setChartType(e.target.value)}
                     >
-                        {Object.keys(subjectAnalyticsData).map(course => (
-                            <option key={course} value={course}>{course}</option>
-                        ))}
+                        <option value="lectureViews">Views per Lecture</option>
+                        <option value="assignments">Assignments Submitted</option>
+                        <option value="quizScores">Quiz Scores</option>
                     </select>
                 </div>
+
             </div>
             <div className="chart-container">
                 <Bar data={chartData} options={chartOptions} />
@@ -103,4 +127,3 @@ export default function Analytics() {
         </Panel>
     );
 }
-

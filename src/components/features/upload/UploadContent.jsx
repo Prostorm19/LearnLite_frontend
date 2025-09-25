@@ -11,16 +11,15 @@ export default function UploadContent() {
         <Panel>
             <div className="panel-header">
                 <div className="form-group">
-                    <label>Select Course</label>
+                    <label>Select Subject</label>
                     <select
                         value={selectedCourse}
                         onChange={(e) => setSelectedCourse(e.target.value)}
                     >
-                        <option>MTech</option>
-                        <option>MBA (Tech)</option>
-                        <option>MCA</option>
-                        <option>MCA B1</option>
-                        <option>MCA B2</option>
+                        <option>Linked Lists</option>
+                        <option>Trees</option>
+                        <option>Maps</option>
+                        <option>Arrays</option>
                     </select>
                 </div>
                 <Button className="primary">Upload New</Button>

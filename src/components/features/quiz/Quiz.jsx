@@ -63,22 +63,22 @@ export default function Quiz() {
     const quizzes = [
         {
             id: 1,
-            title: "Introduction to JavaScript Basics",
+            title: "Introduction to Data Structures",
             course: "MCA",
             questions: 15,
             status: "Published",
         },
         {
             id: 2,
-            title: "Machine Learning Concepts",
-            course: "MTech",
+            title: "Object-Oriented Programming Concepts",
+            course: "MCA",
             questions: 25,
             status: "Draft",
         },
         {
             id: 3,
-            title: "Business Strategy Fundamentals",
-            course: "MBA (Tech)",
+            title: "Linked Lists and Trees",
+            course: "MCA",
             questions: 20,
             status: "Published",
         },

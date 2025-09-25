@@ -9,7 +9,7 @@ export default function Lectures() {
     const [drafts, setDrafts] = useState([
         {
             id: 1,
-            title: "Introduction",
+            title: "Linked Lists",
             duration: "10:47",
             size: "21 MB",
             course: "MCA",
@@ -17,10 +17,10 @@ export default function Lectures() {
         },
         {
             id: 2,
-            title: "Introduction",
+            title: "Trees and Graphs",
             duration: "10:47",
-            size: "21 MB",
-            course: "MBA Tech",
+            size: "30 MB",
+            course: "MCA",
             date: "Sept 1, 2025",
         },
     ]);

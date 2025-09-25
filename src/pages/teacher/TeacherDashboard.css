@@ -717,3 +717,98 @@ select {
 }
 
 /* ...existing code... */
+
+/* --- New Assignment Page Styles --- */
+
+.assignments-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.assignment-tabs {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.assignment-tab {
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  padding: 0.5rem 0;
+  color: #6b7280;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.assignment-tab.active {
+  color: #7c3aed;
+  font-weight: 600;
+  border-bottom-color: #7c3aed;
+}
+
+.assignments-content {
+  margin-top: 1rem;
+}
+
+.assignment-date-group {
+  margin-bottom: 2rem;
+}
+
+.assignment-group-header {
+  margin-bottom: 1rem;
+  color: #4b5563;
+}
+
+.assignment-group-header span {
+  margin-left: 0.5rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.assignment-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 1rem;
+  transition: background-color 0.2s;
+}
+
+.assignment-card:hover {
+  background-color: #f3f4f6;
+}
+
+.assignment-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.assignment-details {
+  flex-grow: 1;
+}
+
+.assignment-card-title {
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.25rem;
+}
+
+.assignment-card-meta,
+.assignment-card-course {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
